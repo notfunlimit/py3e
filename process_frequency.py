@@ -38,7 +38,7 @@ def frequency_csv(x):
         for ii in range(1000000,1000000+x):
                 resultx=str(frequency(ii))
                 file.write(resultx+'\n')
-        file.write('=AVERAGE(A1:A'+str(x)+')')
+        file.write('Average:'+','+'=AVERAGE(A1:A'+str(x)+')')
         file.close()
         return 'finished'
 

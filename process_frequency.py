@@ -1,4 +1,5 @@
 import time
+import os
 
 def efficiency(x):
 	T_I=time.time()
@@ -34,14 +35,18 @@ def frequency(x):
 	return ((1/((T_II-T_I)/x))/1000000)
 
 def frequency_csv(x):
-        file=open(r'C:\result.csv','w')
+        if os.path.exists(r'D:\XBENCHMARK')==1:
+                pass
+        else:
+                os.mkdir(r'D:\XBENCHMARK')
+        T_A=time.time()
+        file=open(r'D:\XBENCHMARK\result'+time.strftime('%Y-%m-%d-%H-%M-%S')+'.csv','w')
         for ii in range(1000000,1000000+x):
-                resultx=str(frequency(ii))
-                file.write(resultx+'\n')
-        file.write('Average:'+','+'=AVERAGE(A1:A'+str(x)+')'+','+'MHz')
+                resultx=frequency(1000000)
+                file.write(str(resultx)+'\n')
+                #totalmhz+=resultx
+        file.write('Average:'+','+'=AVERAGE(A1:A'+str(x)+')'+',MHz')
+        #or use this:file.write('Average:,'+str(totalmhz/x)+',MHz')
         file.close()
-        return 'finished'
-
-
-
-
+        T_B=time.time()
+        return 'Finished in '+str(T_B-T_A)+' secs.'

@@ -1,5 +1,6 @@
 import time
 import os
+from tkinter import *
 
 def efficiency(x):
 	T_I=time.time()
@@ -47,6 +48,20 @@ def frequency_csv(x):
                 #totalmhz+=resultx
         file.write('Average:'+','+'=AVERAGE(A1:A'+str(x)+')'+',MHz')
         #or use this:file.write('Average:,'+str(totalmhz/x)+',MHz')
-        file.close()
+        file.write('Finished at:'+','+time.strftime('%Y-%m-%d-%H-%M-%S')+'\n')
         T_B=time.time()
+        file.write('In '+','+str(T_B-T_A)+',secs.')
+        file.close()
         return 'Finished in '+str(T_B-T_A)+' secs.'
+
+#main GUI Programme Part:
+#mainwindow=Tk()
+#mainwindow.title('X_BENCH_MARK')
+#mainwindow.geometry('254x20')
+#e=IntVar()
+#TAKE_TIMES = Entry(mainwindow,textvariable = e)
+#e.set('100')
+#TAKE_TIMES.pack(side = RIGHT)
+#START_BENCHMARK_BTN=Button(mainwindow,text='Start Benchmark!',command=frequency_csv(e))
+#START_BENCHMARK_BTN.pack(fill=BOTH,expand=0)
+#mainloop()

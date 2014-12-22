@@ -46,13 +46,13 @@ def frequency_csv(x):
                 resultx=frequency(1000000)
                 file.write(str(resultx)+'\n')
                 #totalmhz+=resultx
-        file.write('Average:'+','+'=AVERAGE(A1:A'+str(x)+')'+',MHz')
+        file.write('Average:'+','+'=AVERAGE(A1:A'+str(x)+')'+',MHz \n')
         #or use this:file.write('Average:,'+str(totalmhz/x)+',MHz')
-        file.write('Finished at:'+','+time.strftime('%Y-%m-%d-%H-%M-%S')+'\n')
+        file.write('At:'+','+time.strftime('%Y-%m-%d-%H-%M-%S')+'\n')
         T_B=time.time()
-        file.write('In '+','+str(T_B-T_A)+',secs.')
+        file.write('In'+','+str(T_B-T_A)+',secs.')
         file.close()
-        return 'Finished in '+str(T_B-T_A)+' secs.'
+        return 'In '+str(T_B-T_A)+' secs.'
 
 #main GUI Programme Part:
 #mainwindow=Tk()
@@ -65,3 +65,4 @@ def frequency_csv(x):
 #START_BENCHMARK_BTN=Button(mainwindow,text='Start Benchmark!',command=frequency_csv(e))
 #START_BENCHMARK_BTN.pack(fill=BOTH,expand=0)
 #mainloop()
+

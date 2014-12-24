@@ -41,18 +41,22 @@ def frequency_csv(x):
         else:
                 os.mkdir(r'D:\XBENCHMARK')
         T_A=time.time()
-        file=open(r'D:\XBENCHMARK\result'+time.strftime('%Y-%m-%d-%H-%M-%S')+'.csv','w')
-        for ii in range(1000000,1000000+x):
+        print('Benchmark started at:'+time.strftime('%Y-%m-%d-%H:%M:%S'))
+        file=open(r'D:\XBENCHMARK\result-'+time.strftime('%Y-%m-%d-%H-%M-%S')+'#'+str(int(x))+'.csv','w')
+        for ii in range(1000000,1000000+int(x)):
                 resultx=frequency(1000000)
                 file.write(str(resultx)+'\n')
                 #totalmhz+=resultx
-        file.write('Average:'+','+'=AVERAGE(A1:A'+str(x)+')'+',MHz \n')
+        file.write('##################STATS#################\n')
+        file.write('Average:'+','+'=AVERAGE(A1:A'+str(int(x))+')'+',MHz \n')
         #or use this:file.write('Average:,'+str(totalmhz/x)+',MHz')
-        file.write('At:'+','+time.strftime('%Y-%m-%d-%H-%M-%S')+'\n')
+        file.write('At'+','+time.strftime('%Y-%m-%d-%H:%M:%S')+'\n')
         T_B=time.time()
+        print('Benchmark ended at:'+time.strftime('%Y-%m-%d-%H:%M:%S'))
         file.write('In'+','+str(T_B-T_A)+',secs.')
+        file.write('\n########################################')
         file.close()
-        return 'In '+str(T_B-T_A)+' secs.'
+        print('In '+str(T_B-T_A)+' secs.')
 
 #main GUI Programme Part:
 #mainwindow=Tk()
@@ -65,4 +69,5 @@ def frequency_csv(x):
 #START_BENCHMARK_BTN=Button(mainwindow,text='Start Benchmark!',command=frequency_csv(e))
 #START_BENCHMARK_BTN.pack(fill=BOTH,expand=0)
 #mainloop()
+
 

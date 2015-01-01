@@ -15,6 +15,8 @@ def frequency(x):
 
 
 def make_csv(x):
+        #initial
+        total=0
 
         #create address
         if os.path.exists(r'D:\XBENCHMARK\Result')==1:
@@ -32,23 +34,32 @@ def make_csv(x):
                 resultx=frequency(1000000)
                 file.write(str(resultx)+'\n')
                 print(str(ii)+'/1000')
+                total+=resultx
 
-        #handle result
+        #handle result in file
         file.write('##################STATS#################\n')
         file.write('Average:'+','+'=AVERAGE(A1:A'+str(int(x))+')'+',MHz \n')
         file.write('At'+','+time.strftime('%Y-%m-%d-%H:%M:%S')+'\n')
         T_B=time.time()
-        print('Benchmark ended at:'+time.strftime('%Y-%m-%d-%H:%M:%S'))
         file.write('In'+','+str(T_B-T_A)+',secs.')
         file.write('\n########################################')
         file.close()
 
+        #handle result in command line
         #feedback
+        print('Benchmark ended at:'+time.strftime('%Y-%m-%d-%H:%M:%S'))
+        print('##################STATS#################')
         print('In '+str(T_B-T_A)+' secs.')
         print('Result saved at:'+'D:\XBENCHMARK\Result')
+        print('Average:'+str(total/int(x))+'MHz')
+        print('########################################')
+
+
 
 if __name__=='__main__':
         #num=input('Takes:')
         make_csv(1000)
+
+
 
 

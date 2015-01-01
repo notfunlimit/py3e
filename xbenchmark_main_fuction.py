@@ -33,7 +33,7 @@ def make_csv(x):
         for ii in range(1,int(x)):
                 resultx=frequency(1000000)
                 file.write(str(resultx)+'\n')
-                print(str(ii)+'/1000')
+                print(str(ii)+'/'+str(int(x)))
                 total+=resultx
 
         #handle result in file

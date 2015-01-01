@@ -46,7 +46,7 @@ def frequency_csv(x):
         for ii in range(1000000,1000000+int(x)):
                 resultx=frequency(1000000)
                 file.write(str(resultx)+'\n')
-                #totalmhz+=resultx
+                #totalmhz+=resultx'D:\XBENCHMARK'
         file.write('##################STATS#################\n')
         file.write('Average:'+','+'=AVERAGE(A1:A'+str(int(x))+')'+',MHz \n')
         #or use this:file.write('Average:,'+str(totalmhz/x)+',MHz')
@@ -57,7 +57,13 @@ def frequency_csv(x):
         file.write('\n########################################')
         file.close()
         print('In '+str(T_B-T_A)+' secs.')
+        print('Result saved at:'+'D:\XBENCHMARK')
 
+
+if __name__=='__main__':
+        #num=input('Takes:')
+        frequency_csv(1000)
+        
 #main GUI Programme Part:
 #mainwindow=Tk()
 #mainwindow.title('X_BENCH_MARK')

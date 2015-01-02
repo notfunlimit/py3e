@@ -7,8 +7,8 @@ local_addr=os.getcwd()
 sys.path.append(local_addr+r'\func')
 
 #import functions
-import genere_sult
+import gene_result
 
 
 if __name__ == '__main__':
-	generesult.make_csv(1000)
+	gene_result.make_csv(1000)

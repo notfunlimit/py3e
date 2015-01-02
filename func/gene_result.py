@@ -55,7 +55,3 @@ def make_csv(x):
         print('In '+str(T_B-T_A)+' secs.')
         print('Average:'+str(total/int(x))+'MHz')
         print('########################################')
-
-if __name__=='__main__':
-        #num=input('Takes:')
-        make_csv(10000)

@@ -22,6 +22,6 @@ if __name__ == '__main__':
 	elif tks in range(35,40):
 		gnrs.make_csv(400)
 	elif tks > 40:
-		gnrs.make_csv(1000)
+		gnrs.make_csv(500)
 	else:
 		print('Error:please restart')

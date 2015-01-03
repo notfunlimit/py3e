@@ -1,3 +1,4 @@
+#GNRS=generate result
 #Author: XDASADX
 #Project name:pyth0n3c1ipse
 #e-mail address:leemailbox1@gmail.com
@@ -6,6 +7,7 @@ import time
 import os
 from tkinter import *
 
+#part I
 def frequency(x):
 #bigger is better
 #unit:MHz        
@@ -16,11 +18,12 @@ def frequency(x):
         T_II=time.time()
         return ((1/((T_II-T_I)/x))/1000000)
 
+#part II
 def make_csv(x):
         #initial
         total=0
 
-        #create address
+        #create local address
         if os.path.exists(r'D:\XBENCHMARK\Result')==1:
                 pass
         else:

@@ -25,3 +25,6 @@ if __name__ == '__main__':
 		gnrs.make_csv(500)
 	else:
 		print('Error:please restart')
+		
+    #halts
+	time.sleep(5)

@@ -1,6 +1,11 @@
+#Allowed GPL v3 License
+#github webpage:https://github.com/XDASADX/Pyth0n3c1ipse
+#compiler: sublime 2 & Python IDLE
+
 #import system modules
 import sys
 import os
+import time
 
 #generate local address
 local_addr=os.getcwd()
@@ -24,7 +29,8 @@ if __name__ == '__main__':
 	elif tks > 40:
 		gnrs.make_csv(500)
 	else:
-		print('Error:please restart')
+		gnrs.make_csv(100)
+
 		
     #halts
 	time.sleep(5)

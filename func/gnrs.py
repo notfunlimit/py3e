@@ -2,7 +2,6 @@
 #Author: XDASADX
 #Project name:pyth0n3c1ipse
 #e-mail address:leemailbox1@gmail.com
-
 import time
 import os
 from tkinter import *
@@ -58,3 +57,10 @@ def make_csv(x):
         print('In '+str(T_B-T_A)+' secs.')
         print('Average:'+str(total/int(x))+'MHz')
         print('########################################')
+#part III intitalizing
+#def intitial(x):
+     #   print('Intitializing...')
+      #  for i in range(1,x):
+       #         ttl+=freq(1000000)
+        #t_avr=ttl/x
+        #return t_avr

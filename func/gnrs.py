@@ -57,10 +57,12 @@ def make_csv(x):
         print('In '+str(T_B-T_A)+' secs.')
         print('Average:'+str(total/int(x))+'MHz')
         print('########################################')
+
 #part III intitalizing
-#def intitial(x):
-     #   print('Intitializing...')
-      #  for i in range(1,x):
-       #         ttl+=freq(1000000)
-        #t_avr=ttl/x
-        #return t_avr
+def intitial(x):
+    print('intitalizing...')
+    tks=0
+    for i in range(1,x):
+        tks+=frequency(1000000)
+    g_avr=tks/x
+    return g_avr

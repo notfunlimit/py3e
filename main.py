@@ -1,4 +1,4 @@
-#Allowed GPL v3 License
+#Followed GPL v3 License
 #github webpage:https://github.com/XDASADX/Pyth0n3c1ipse
 #compiler: sublime 2 & Python IDLE
 
@@ -16,21 +16,22 @@ import gnrs
 
 #main
 if __name__ == '__main__':
-	#auto_select takes
-	tks=gnrs.frequency(1000000)
-	if tks in range(0,8):
+	#intitialize
+	t_avr=gnrs.intitial(10)
+	#Automatics
+	
+	if t_avr in range(0,8):
 		gnrs.make_csv(80)
-	elif tks in(8,20):
+	elif t_avr in(8,20):
 		gnrs.make_csv(200)
-	elif tks in range(20,35):
+	elif t_avr in range(20,35):
 		gnrs.make_csv(200)
-	elif tks in range(35,40):
+	elif t_avr in range(35,40):
 		gnrs.make_csv(400)
-	elif tks > 40:
+	elif t_avr > 40:
 		gnrs.make_csv(500)
 	else:
 		gnrs.make_csv(100)
-
 		
     #halts
 	time.sleep(5)

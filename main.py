@@ -1,6 +1,8 @@
 #Followed GPL v3 License
 #github webpage:https://github.com/XDASADX/Pyth0n3c1ipse
 #compiler: sublime 2 & Python IDLE
+#contributor: XDASADX leemailbox1@gmail.com
+#            
 
 #import system modules
 import sys
@@ -8,8 +10,8 @@ import os
 import time
 
 #generate local address
-local_addr=os.getcwd()
-sys.path.append(local_addr+r'\func')
+local_addr=os.getcwd()+r'\func'
+sys.path.append(local_addr)
 
 #import functions
 import gnrs
@@ -27,9 +29,9 @@ if __name__ == '__main__':
 	elif t_avr in range(20,35):
 		gnrs.make_csv(200)
 	elif t_avr in range(35,40):
-		gnrs.make_csv(400)
+		gnrs.make_csv(200)
 	elif t_avr > 40:
-		gnrs.make_csv(500)
+		gnrs.make_csv(200)
 	else:
 		gnrs.make_csv(100)
 		

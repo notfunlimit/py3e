@@ -2,10 +2,12 @@
 #Author: XDASADX
 #Project name:pyth0n3c1ipse
 #e-mail address:leemailbox1@gmail.com
+
 import time
 import os
 from tkinter import *
 
+#main
 #part I
 def frequency(x):
 #bigger is better
@@ -66,3 +68,20 @@ def intitial(x):
         tks+=frequency(1000000)
     g_avr=tks/x
     return g_avr
+
+
+#debug
+
+def deb_inst_avr(x):
+    tl=0
+    for i in range(1,x):
+        tl+=frequency(1000000)
+    t_a=tl/x
+    return t_a
+
+def deb_inst_freq(x):
+    for i in range(1,x):
+        print(deb_inst_avr(10))
+        time.sleep(1)
+        os.system('cls')
+    print('finished')

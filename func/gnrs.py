@@ -18,7 +18,7 @@ def frequency(x):
 #unit:MHz        
         T_I=time.time()
         r_num=0
-        for i in range(1,x+1):
+        for i in range(0,x):
                 pass
         T_II=time.time()
         return ((1/((T_II-T_I)/x))/1000000)
@@ -40,7 +40,7 @@ def make_csv(x):
         file=open(csv_save_addr+'\\result-'+time.strftime('%Y-%m-%d-%H-%M-%S')+'#'+str(int(x))+'.csv','w')
         
         #main
-        for ii in range(1,int(x)+1):
+        for ii in range(0,int(x)):
                 resultx=frequency(100000)
                 file.write(str(resultx)+'\n')
                 print(str(ii)+'/'+str(int(x)))
@@ -67,7 +67,7 @@ def make_csv(x):
 def intitial(x):
     print('intitalizing...')
     tks=0
-    for i in range(1,x+1):
+    for i in range(0,x):
         tks+=frequency(1000000)
     g_avr=tks/x
     return g_avr
@@ -77,13 +77,13 @@ def intitial(x):
 
 def deb_inst_avr(x):
     tl=0
-    for i in range(1,x+1):
+    for i in range(0,x):
         tl+=frequency(100000)
     t_a=tl/x
     return t_a
 
 def deb_inst_freq(x):
-    for i in range(1,x+1):
+    for i in range(0,x):
         print(deb_inst_avr(10))
         time.sleep(1)
         os.system('cls')

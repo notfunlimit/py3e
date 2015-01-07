@@ -10,8 +10,11 @@ import os
 import time
 
 #generate local address
-local_addr=os.getcwd()+r'\func'
-sys.path.append(local_addr)
+loc_addr=os.getcwd()
+sys.path.append(loc_addr)
+import adsys
+
+adsys.add_sys()
 
 #import functions
 import gnrs
@@ -25,15 +28,12 @@ if __name__ == '__main__':
 	if t_avr in range(0,8):
 		gnrs.make_csv(80)
 	elif t_avr in(8,20):
-		gnrs.make_csv(200)
-	elif t_avr in range(20,35):
-		gnrs.make_csv(200)
-	elif t_avr in range(35,40):
-		gnrs.make_csv(200)
-	elif t_avr > 40:
+		gnrs.make_csv(100)
+	elif t_avr > 20:
 		gnrs.make_csv(200)
 	else:
 		gnrs.make_csv(100)
+		
 		
     #halts
 	time.sleep(5)

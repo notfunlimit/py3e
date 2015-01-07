@@ -1,7 +1,6 @@
+#Main module of this program
+
 #GNRS=generate result
-#Author: XDASADX
-#Project name:pyth0n3c1ipse
-#e-mail address:leemailbox1@gmail.com
 
 import time
 import os
@@ -71,7 +70,6 @@ def intitial(x):
         tks+=frequency(1000000)
     g_avr=tks/x
     return g_avr
-
 
 #debug
 

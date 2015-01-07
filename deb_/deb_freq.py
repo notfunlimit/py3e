@@ -7,7 +7,7 @@ func=['f','u','n','c']
 
 #A.S.L.A.
 local_addr=list(os.getcwd())
-local_addr=''.join(local_addr[:-5]+func)
+local_addr=''.join(local_addr[:-4]+func)
 sys.path.append(local_addr)
 
 #I.L.F.

@@ -27,7 +27,7 @@ if __name__ == '__main__':
 	
 	if t_avr in range(0,8):
 		gnrs.make_csv(80)
-	elif t_avr in(8,20):
+	elif t_avr in range(8,20):
 		gnrs.make_csv(100)
 	elif t_avr > 20:
 		gnrs.make_csv(200)

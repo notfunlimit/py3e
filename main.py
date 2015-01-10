@@ -37,4 +37,3 @@ if __name__ == '__main__':
     process.pack(fill=Y,side='right')
     mainloop()
 
-    time.sleep(5)

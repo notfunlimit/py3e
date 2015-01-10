@@ -19,6 +19,14 @@ import run
 loc_addr=os.getcwd()
 csv_save_addr=loc_addr+r'\result'
 
+#GUI FUNCTIONS
+def wait_n_clear(x,textbox):
+    time.sleep(x)
+    textbox.delete(0.0, END)
+    
+def rproc():
+    run.mcsv_run()
+    wait_n_clear(5,info_src)
 
 #main
 #part I
@@ -46,15 +54,22 @@ def make_csv(x):
         #start
         T_A=time.time()
         print('Benchmark started at:'+time.strftime('%Y-%m-%d-%H:%M:%S'))
+        info_src.insert(1.0,'Benchmark started at:'+time.strftime('%Y-%m-%d-%H:%M:%S')+'\n')
         file=open(csv_save_addr+'\\result-'+time.strftime('%Y-%m-%d-%H-%M-%S')+'#'+str(int(x))+'.csv','w')
         
         #main
         for ii in range(0,int(x)):
+                #console part
                 resultx=frequency(100000)
                 file.write(str(resultx)+'\n')
                 print(str(ii)+'/'+str(int(x)))
                 total+=resultx
-        print(str(x)+'/'+str(x))
+
+                #GUI Part
+                info_src.insert(1.0,str(ii)+'/'+str(int(x))+'\n')
+                info_src.update()
+
+        print(str(int(x))+'/'+str(int(x)))
         #file feedback
         file.write('#'*40+'\n')
         file.write('Average:'+','+'=AVERAGE(A1:A'+str(int(x))+')'+',MHz \n')
@@ -70,6 +85,9 @@ def make_csv(x):
         print('#'*40)
         print('In '+str(T_B-T_A)+' secs.')
         print('Average:'+str(total/int(x))+'MHz')
+        info_src.insert(1.0,'Result saved at:'+csv_save_addr+'\n')
+        info_src.insert(1.0,'Average:'+str(total/int(x))+'MHz'+'\n')
+        info_src.update()
         print('#'*40)
         return total/(int(x))
 
@@ -99,23 +117,11 @@ def deb_inst_freq(x):
         os.system('cls')
     print('finished')
 
-#GUI FUNCTIONS
-def wait_n_clear(x,textbox):
-    time.sleep(x)
-    textbox.delete(0.0, END)
-    
-
-def rproc():
-    run.mcsv_run()
-    info_src.insert(1.0,'Finished')
-    info_src.update()
-    wait_n_clear(2,info_src)
-
 #GUI FRAME
 frame_main=Tk()
 frame_main.iconbitmap('res/icon/ICO_32x32.ico')
 frame_main.title("Pyth0n3c1ipse")
-frame_main.geometry('256x32')
+frame_main.geometry('480x32')
 frame_main.resizable(False, False)
 
 

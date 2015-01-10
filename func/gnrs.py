@@ -9,6 +9,7 @@ import time
 import sys
 import os
 from tkinter import *
+import tkinter.font as tkFont
 
 local_addr=''.join((list(os.getcwd())[:-4]))
 sys.path.append(local_addr)
@@ -121,15 +122,55 @@ def deb_inst_freq(x):
 frame_main=Tk()
 frame_main.iconbitmap('res/icon/ICO_32x32.ico')
 frame_main.title("Pyth0n3c1ipse")
-frame_main.geometry('480x32')
+frame_main.geometry('480x76')
 frame_main.resizable(False, False)
 
+def a_t_b():
+    about_page=Tk()
+    about_page.iconbitmap('res/icon/ICO_32x32.ico')
+    about_page.title("About")
+    about_page.geometry('320x240')
+    about_page.resizable(False, False)
+
+    ico_lbl=Label(about_page)
+    ico_lbl.config(text='Pyth0n3c1ipse\n'
+                    +'An benchmark program on python platform\n'
+                    +'Author : XDASADX\n'
+                    +'E-mail address : leemailbox1@gmail.com\n'
+                    +'Published on : github.com/xdasadx/pyth0n3c1ipse\n')
+    ico_lbl.pack()
+
+menubar = Menu(frame_main)
+frame_main['menu'] = menubar
+
+benchmenu = Menu(menubar,tearoff = 1)
+settingmenu=Menu(menubar,tearoff = 1)
+helpmenu=Menu(menubar,tearoff=1)
+
+menubar.add_cascade(label = 'Benchmark',menu = benchmenu)
+benchmenu.add_checkbutton(label = 'Start Benchmark',command = rproc)
+benchmenu.add_checkbutton(label = 'Exit',command = frame_main.quit)
+
+menubar.add_cascade(label = 'Options',menu = settingmenu)
+settingmenu.add_checkbutton(label = 'Setting',command = frequency(100000))
+
+menubar.add_cascade(label = 'Help',menu = helpmenu)
+helpmenu.add_checkbutton(label = 'About',command = a_t_b)
+
+
+logo_bar = os.getcwd()+r'\res\items\bar_extrafine.gif'
+img = PhotoImage(file=logo_bar)
+logo_lbl=Label(frame_main)
+logo_lbl.config(image=img)
+logo_lbl.pack(side='bottom')
 
 
 process = Button(frame_main,text='RUN_BENCHMARK',command=rproc,activeforeground='navy',activebackground='white')
-process.pack(fill=Y,side='right')
+process.pack(side='right')
 
 info_src=Text(frame_main,fg='midnight blue')
-info_src.pack(side='left',fill=X)
+info_src.pack(side='left')
+
+frame_main.bind (sequence="<Destroy>", func=frame_main.quit)
 
 mainloop()

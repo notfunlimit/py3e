@@ -4,12 +4,21 @@
 #Project name:pyth0n3c1ipse
 #e-mail address:leemailbox1@gmail.com
 
+#import modules
 import time
+import sys
 import os
 from tkinter import *
 
+local_addr=''.join((list(os.getcwd())[:-4]))
+sys.path.append(local_addr)
+
+#import adsys
+import run
+
 loc_addr=os.getcwd()
 csv_save_addr=loc_addr+r'\result'
+
 
 #main
 #part I
@@ -45,7 +54,7 @@ def make_csv(x):
                 file.write(str(resultx)+'\n')
                 print(str(ii)+'/'+str(int(x)))
                 total+=resultx
-        
+        print(str(x)+'/'+str(x))
         #file feedback
         file.write('#'*40+'\n')
         file.write('Average:'+','+'=AVERAGE(A1:A'+str(int(x))+')'+',MHz \n')
@@ -62,6 +71,7 @@ def make_csv(x):
         print('In '+str(T_B-T_A)+' secs.')
         print('Average:'+str(total/int(x))+'MHz')
         print('#'*40)
+        return total/(int(x))
 
 #part III intitalizing
 def intitial(x):
@@ -88,3 +98,32 @@ def deb_inst_freq(x):
         time.sleep(1)
         os.system('cls')
     print('finished')
+
+#GUI FUNCTIONS
+def wait_n_clear(x,textbox):
+    time.sleep(x)
+    textbox.delete(0.0, END)
+    
+
+def rproc():
+    run.mcsv_run()
+    info_src.insert(1.0,'Finished')
+    info_src.update()
+    wait_n_clear(2,info_src)
+
+#GUI FRAME
+frame_main=Tk()
+frame_main.iconbitmap('res/icon/ICO_32x32.ico')
+frame_main.title("Pyth0n3c1ipse")
+frame_main.geometry('256x32')
+frame_main.resizable(False, False)
+
+
+
+process = Button(frame_main,text='RUN_BENCHMARK',command=rproc,activeforeground='navy',activebackground='white')
+process.pack(fill=Y,side='right')
+
+info_src=Text(frame_main,fg='midnight blue')
+info_src.pack(side='left',fill=X)
+
+mainloop()

@@ -133,6 +133,7 @@ class gui_func():
                         +'\n')
 
     def rproc():
+        gui_func.wait_n_clear(0,info_src)
         run.mcsv_run()
         #wait_n_clear(5,info_src)
 

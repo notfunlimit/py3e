@@ -147,44 +147,45 @@ class gui_func():
         # webbrowser.open(src_addr)
 
 #GUI FRAME
+#frame_main
 frame_main=Tk()
 frame_main.iconbitmap('res/icon/ICO_32x32.ico')
 frame_main.title("Pyth0n3c1ipse")
 frame_main.geometry('480x76')
 frame_main.resizable(False, False)
-
+#menubar
 menubar = Menu(frame_main)
 frame_main['menu'] = menubar
-
+#|
 benchmenu = Menu(menubar,tearoff = 1)
 settingmenu = Menu(menubar,tearoff = 1)
 helpmenu = Menu(menubar,tearoff=1)
-
+#|
 menubar.add_cascade(label = 'Benchmark',menu = benchmenu)
 benchmenu.add_checkbutton(label = 'Start Benchmark',command = gui_func.rproc)
 benchmenu.add_checkbutton(label = 'Result',command = gui_func.o_result)
 benchmenu.add_separator()
 benchmenu.add_checkbutton(label = 'Exit',command = frame_main.quit)
-
+#|
 menubar.add_cascade(label = 'Help',menu = helpmenu)
 helpmenu.add_checkbutton(label = 'About', command = gui_func.a_t_b)
 helpmenu.add_separator()
 helpmenu.add_checkbutton(label = 'Github', command = gui_func.git_addr)
 helpmenu.add_checkbutton(label = 'Get sourcecode', command = gui_func.get_src)
-
+#logo
 logo_bar = os.getcwd()+r'\res\items\bar_extrafine.gif'
 img = PhotoImage(file=logo_bar)
 logo_lbl=Label(frame_main)
 logo_lbl.config(image=img)
 logo_lbl.pack(side='bottom')
-
+#button
 process = Button(frame_main,text='RUN_BENCHMARK',command=gui_func.rproc,activeforeground='navy',activebackground='white')
 #button_img=PhotoImage(loc_addr+r'\res\items\run.gif')
 #process = Button(frame_main,width=32,height=32,image=button_img,command=gui_func.rproc)
 process.pack(fill=Y,side='right')
-
+#textbox
 info_src=Text(frame_main,fg='midnight blue')
 info_src.pack(side='left')
 info_src.insert(INSERT, "Pyth0n3c1ipse non-finished version")
-
+#end
 mainloop()

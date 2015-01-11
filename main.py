@@ -1,4 +1,4 @@
-#Followed GPL v3 License
+#Followed GPL v2 License
 #github webpage:https://github.com/XDASADX/Pyth0n3c1ipse
 #compiler: sublime 2 & Python IDLE
 #contributor: XDASADX leemailbox1@gmail.com
@@ -7,8 +7,6 @@
 #import system modules
 import sys
 import os
-import time
-from tkinter import *
 
 #generate local address
 loc_addr=os.getcwd()
@@ -17,9 +15,6 @@ import adsys
 
 adsys.add_sys()
 import gnrs
-
-#import functions
-import run
 
 #main
 if __name__ == '__main__':

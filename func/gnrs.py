@@ -80,9 +80,11 @@ class benchmark():
 
         #feedback
         print('Benchmark ended at:'+time.strftime('%Y-%m-%d-%H:%M:%S'))
+        info_src.insert(1.0,'Benchmark ended at:'+time.strftime('%Y-%m-%d-%H:%M:%S')+'\n')
         print('Result saved at:'+csv_save_addr)
         print('#'*40)
         print('In '+str(T_B-T_A)+' secs.')
+        info_src.insert(1.0,'In '+str(T_B-T_A)+' secs.\n')
         print('Average:'+str(total/int(x))+'MHz')
         info_src.insert(1.0,'Result saved at:'+csv_save_addr+'\n')
         info_src.insert(1.0,'Average:'+str(total/int(x))+'MHz'+'\n')

@@ -15,5 +15,5 @@ import gnrs
 
 #D.C.
 if __name__ == '__main__':
-	gnrs.deb_inst_freq(20)
+	gnrs.benchmark.deb_inst_freq(20)
 	os.system('cls')

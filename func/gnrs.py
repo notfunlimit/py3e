@@ -186,8 +186,9 @@ process = Button(frame_main,text='RUN_BENCHMARK',command=gui_func.rproc,activefo
 #process = Button(frame_main,width=32,height=32,image=button_img,command=gui_func.rproc)
 process.pack(fill=Y,side='right')
 #textbox
-info_src=Text(frame_main,fg='midnight blue')
+ft = tkFont.Font(family = 'Consolas',size = 8,weight = tkFont.BOLD)
+info_src=Text(frame_main,font = ft,fg='midnight blue')
 info_src.pack(side='left')
-info_src.insert(INSERT, "Pyth0n3c1ipse non-finished version")
+info_src.insert(INSERT, "Pyth0n3c1ipse --an opensource project")
 #end
 mainloop()

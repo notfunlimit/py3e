@@ -93,6 +93,8 @@ class benchmark():
 #part III intitalizing
     def intitial(x):
         print('intitalizing...')
+        info_src.insert(1.0,'intitalizing...\n')
+        info_src.update()
         tks=0
         for i in range(0,x):
             tks+=benchmark.frequency(1000000)
@@ -176,11 +178,10 @@ logo_lbl=Label(frame_main)
 logo_lbl.config(image=img)
 logo_lbl.pack(side='bottom')
 
-
 process = Button(frame_main,text='RUN_BENCHMARK',command=gui_func.rproc,activeforeground='navy',activebackground='white')
 #button_img=PhotoImage(loc_addr+r'\res\items\run.gif')
 #process = Button(frame_main,width=32,height=32,image=button_img,command=gui_func.rproc)
-process.pack(side='right')
+process.pack(fill=Y,side='right')
 
 info_src=Text(frame_main,fg='midnight blue')
 info_src.pack(side='left')

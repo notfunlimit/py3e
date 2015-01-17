@@ -19,6 +19,7 @@ sys.path.append(local_addr)
 #import adsys
 import run
 
+
 loc_addr=os.getcwd()
 csv_save_addr=loc_addr+r'\result'
 
@@ -47,9 +48,6 @@ class benchmark():
         #initial
         total=0
 
-        #create local address
-
-        
         #start
         T_A=time.time()
         print('Benchmark started at:'+time.strftime('%Y-%m-%d-%H:%M:%S'))
@@ -133,7 +131,6 @@ class gui_func():
                         +'\n')
 
     def rproc():
-        gui_func.wait_n_clear(0,info_src)
         run.mcsv_run()
         #wait_n_clear(5,info_src)
 
@@ -182,7 +179,7 @@ logo_lbl=Label(frame_main)
 logo_lbl.config(image=img)
 logo_lbl.pack(side='bottom')
 #button
-process = Button(frame_main,text='RUN_BENCHMARK',command=gui_func.rproc,activeforeground='navy',activebackground='white')
+process = Button(frame_main,bg='Cyan',font='Consolas',relief=FLAT,text='RUN_BENCHMARK',command=gui_func.rproc,activeforeground='navy',activebackground='white')
 #button_img=PhotoImage(loc_addr+r'\res\items\run.gif')
 #process = Button(frame_main,width=32,height=32,image=button_img,command=gui_func.rproc)
 process.pack(fill=Y,side='right')
@@ -192,4 +189,6 @@ info_src=Text(frame_main,font = ft,fg='midnight blue')
 info_src.pack(side='left')
 info_src.insert(INSERT, "Pyth0n3c1ipse --an opensource project")
 #end
+
+
 mainloop()
